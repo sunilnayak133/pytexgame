@@ -1,8 +1,8 @@
 #to implement locations and movement between them
 
-#first I define a class "location"
+#first I define a class "Location"
 #Every location will be an object of this class.
-class location:
+class Location:
 	#define two variables for the class location
 	#its name
 	name = "placeholdername"
@@ -27,7 +27,7 @@ class location:
 		self.firstTime = first
 
 #now I define a player who has to have a current location (and maybe a previous location, a score, etc)
-class player:
+class Player:
 	#initialize a score variable to keep track of the score (if needed)
 	score = 0
 	#initialize a location variable to keep track of where the player is.
@@ -82,8 +82,8 @@ end = start[1][:-1]
 start = start[0]
 #print "Start: %s, End:%s" % (start, end)
 
-stloc = location(start)
-enloc = location(end)
+stloc = Location(start)
+enloc = Location(end)
 #list of locations
 locationlist = [stloc, enloc]
 #list of names
@@ -97,7 +97,7 @@ while(True):
 	loc = loc[:-1]
 	if('$' in loc):
 		break
-	L = location(loc)
+	L = Location(loc)
 	locationlist.append(L)
 	namelist.append(loc)
 	#print loc
@@ -132,7 +132,7 @@ while(True):
 
 #eof = raw_input()
 #declare player
-plyr = player(stloc, enloc)
+plyr = Player(stloc, enloc)
 inp_list = ['n','s','e','w','ne','nw','se','sw']
 #Now start taking player input:
 print "Welcome. You are here: %s" % (stloc.name)
