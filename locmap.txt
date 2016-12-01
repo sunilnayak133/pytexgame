@@ -1,0 +1,30 @@
+The Woods,The End
+The Lake
+The Manor
+The Garden
+The Castle
+The Treasure Room
+The Great Hall
+$$$
+The Woods
+Enchanted, but evil as well as good.
+n:The Lake,e:The Manor,w:The Garden,s:The Castle
+The Lake
+Deep is the lake, no roads there are to take.
+s:The Woods
+The Manor
+Old and Worn out
+n:The Treasure Room,w:The Woods
+The Garden
+Beautiful and Filled with Roses and Other Beautiful Flowers
+nw:The End,e:The Woods,s:The Great Hall
+The Castle
+Once Majestic, Now in Ruins
+n:The Woods,w:The Great Hall
+The Treasure Room
+Filled with Treasure! But not really...
+s:The Manor
+The Great Hall
+Huge and roofless.
+n:The Garden,e:The Castle
+$$$
