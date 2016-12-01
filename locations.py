@@ -54,23 +54,25 @@ class player:
 		#else, print generic error message
 		else:
 			print "Nope, can't go there!"
-
-#NOTE THAT THIS VERSION ASSUMES CORRECT MAPS ARE INPUT.
-#IT IS YOUR RESPONSIBILITY TO ENTER CORRECT MAPS IN, ELSE THE GAME BREAKS.
-#format for input file:
-#start_location,goal_location
-#other_location 1
-#other_location 2
-#. . .
-#. . .
-#$$$
-#location_name
-#location first time text (leave blank if nothing)
-#dir:location_name,dir:location name, ...
-#. . .
-#. . .
-#$$$
-#note, each dir should occur only once.
+'''
+NOTE THAT THIS VERSION ASSUMES CORRECT MAPS ARE INPUT.
+IT IS YOUR RESPONSIBILITY TO ENTER CORRECT MAPS IN, ELSE THE GAME BREAKS.
+format for input file:
+start_location,goal_location
+other_location 1
+other_location 2
+. . .
+. . .
+$$$
+location_name
+location first time text (leave blank if nothing)
+dir:location_name,dir:location name, ...
+. . .
+. . .
+$$$
+<eof>
+note, each dir(ection) should occur only once.
+'''
 
 f = open('locmap.txt','r')
 
@@ -82,12 +84,16 @@ start = start[0]
 
 stloc = location(start)
 enloc = location(end)
+#list of locations
 locationlist = [stloc, enloc]
+#list of names
 namelist = [start, end]
+#note - locations and names should have matching indices
 
 #input all location names
 while(True):
 	loc = f.readline()
+	#we don't want to read the \n at the end of the string
 	loc = loc[:-1]
 	if('$' in loc):
 		break
@@ -101,15 +107,18 @@ while(True):
 while(True):
 	try:
 		loc = f.readline()
+		#same \n problem
 		loc = loc[:-1]
 		if('$' in loc):
 			break
 		li = namelist.index(loc)
 		first = f.readline()
+		#again
 		dliststr = f.readline()[:-1].split(',')
 		dlist = {}
 		for i in dliststr:
 			i=i.split(':')
+			#get the location object from the name of location using namelist index
 			dlist[i[0]] = locationlist[namelist.index(i[1])]
 		L = locationlist[li]
 		L.setfirst(first)
@@ -117,49 +126,6 @@ while(True):
 	except(EOFError):
 		break
 
-'''
-#The old input method
-start = raw_input()
-print start
-start = start.split(',')
-end = start[1]
-start = start[0]
-#print "Start: %s, End:%s" % (start, end)
-
-stloc = location(start)
-enloc = location(end)
-locationlist = [stloc, enloc]
-namelist = [start, end]
-
-#input all location names
-while(True):
-	loc = raw_input()
-	if(loc == '$$$'):
-		break
-	L = location(loc)
-	locationlist.append(L)
-	namelist.append(loc)
-
-
-#time to take map in, now. 
-while(True):
-	try:
-		loc = raw_input()
-		if(loc == '$$$'):
-			break
-		li = namelist.index(loc)
-		first = raw_input()
-		dliststr = raw_input().split(',')
-		dlist = {}
-		for i in dliststr:
-			i=i.split(':')
-			dlist[i[0]] = locationlist[namelist.index(i[1])]
-		L = locationlist[li]
-		L.setfirst(first)
-		L.setdlist(dlist)
-	except(EOFError):
-		break
-'''
 #print locationlist
 #print namelist
 #print stloc, enloc
@@ -188,7 +154,3 @@ while(True):
 		else:
 			#print "You have reached the goal!"
 			break
-
-
-
-
