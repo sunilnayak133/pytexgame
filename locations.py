@@ -55,7 +55,7 @@ class player:
 		else:
 			print "Nope, can't go there!"
 
-#NOTE THAT THIS VERSION DOESN'T ASSUME CORRECT MAPS.
+#NOTE THAT THIS VERSION ASSUMES CORRECT MAPS ARE INPUT.
 #IT IS YOUR RESPONSIBILITY TO ENTER CORRECT MAPS IN, ELSE THE GAME BREAKS.
 #format for input file:
 #start_location,goal_location
