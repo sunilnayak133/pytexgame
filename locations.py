@@ -5,7 +5,7 @@
 class location:
 	#define two variables for the class location
 	#its name
-	name = "placeaholdername"
+	name = "placeholdername"
 	#and the text that's displayed the first time someone enters it
 	firstTime = "placeholderFirstTime"
 	visited = False
