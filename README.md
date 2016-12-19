@@ -7,6 +7,9 @@ Maps that are input are assumed to be correct, a check for correctness isn't bui
 
 The game now ends when you reach the final destination.
 
+Video:
+https://www.youtube.com/watch?v=g6S5bqujSJE&feature=youtu.be
+
 TODO:
 
 Adding characters and interactions with the characters
