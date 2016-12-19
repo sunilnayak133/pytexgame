@@ -8,7 +8,12 @@ Maps that are input are assumed to be correct, a check for correctness isn't bui
 The game now ends when you reach the final destination.
 
 TODO:
+
 Adding characters and interactions with the characters
+
 Adding states for the game based on interactions with characters and places visited
+
 Adding an inventory for the player
+
 Adding items to be found at the places and with the characters
+
