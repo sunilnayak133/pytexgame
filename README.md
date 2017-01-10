@@ -1,5 +1,5 @@
 # pytexgame
-A Bare Bones Python Text Game, soon to be made into a Text Game Engine.
+A Bare Bones Python Text Game, soon to be made into a Text Game framework.
 
 The map is read from the locmap.txt file
 Format for the file is mentioned within the python file. 
